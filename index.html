@@ -56,13 +56,10 @@ canvas {
   .KimmPhi:hover::before {
     width: 100%;
     color: #9e6106;
-    filter: drop-shadow(0 0 30px #03bcf4);
-    text-shadow: 0 0 10px #03bcf4,
-    0 0 20px #03bcf4,
-    0 0 40px #03bcf4,
+    filter: drop-shadow(0 0 30px #9e6106);
+    text-shadow: 0 0 10px #9e6106,
+    2px 0px 0px #9e6106;
     -webkit-tap-highlight-color: transparent;
-    <!-- animation: animate 1.3s ease-out infinite; -->
-    <!-- animation: flicker 2s ease-out infinite; -->
 }
 @keyframes flicker{
   0% {
@@ -74,11 +71,6 @@ canvas {
   100% {
     transform: scale(1);
   }
-}
-@media (max-width: 1000px) {
-    .KimmPhi{
-        left: 4%;
-    }
 }
 #pinkboard {
   position: relative;
@@ -125,14 +117,14 @@ canvas {
   100% {
     transform: scale(1);
   }
-
+  
 </style>
 </HEAD>
 <BODY>
   <div class="box">
     <canvas id="pinkboard"></canvas>
   </div>
-  <span class="KimmPhi" data-text="KimPhi">KimPhi</span>
+  <span class="KimmPhi" data-text="KimPhi:3">KimPhi:3</span>
  
 <script>
   var settings = {

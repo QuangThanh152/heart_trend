@@ -21,41 +21,67 @@ canvas {
 }
 .KimmPhi {
     color: transparent;
-    -webkit-text-stroke: 1px rgba(255,255,255,0.5);
     font-size: 40px;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
     position: relative;
     text-transform: uppercase;
     top: 45%;
-    left: 44%;
+    left: 45%;
     right: 50%;
     bottom: 50%;
     -webkit-tap-highlight-color: transparent;
     cursor: pointer;
-}
-.KimmPhi::before {
+    <!-- text-shadow: 1px 1px 1px #919191,
+    1px 2px 1px #919191,
+    1px 3px 1px #919191,
+    1px 4px 1px #919191,
+    1px 2px 1px #919191,
+    1px 18px 6px rgba(16, 16, 16, 0.4),
+    1px 22px 10px rgba(16, 16, 16, 0.2),
+    1px 25px 35px rgba(16, 16, 16, 0.2),
+    1px 30px 60px rgba(16, 16, 16, 0.4); -->
+  }
+  
+  .KimmPhi::before {
     position: absolute;
     content: attr(data-text);
-    color: #e18700;
+    color: #fff;
     width: 0%;
     overflow: hidden;
-    transition: 1s;
-}
-.KimmPhi:hover::before {
+    transition: 1.8s;
+  }
+  .KimmPhi:hover::before {
     width: 100%;
-    filter: drop-shadow(0 0 30px #e18700);
+    color: #9e6106;
+    filter: drop-shadow(0 0 30px #03bcf4);
+    text-shadow: 0 0 10px #03bcf4,
+    0 0 20px #03bcf4,
+    0 0 40px #03bcf4,
     -webkit-tap-highlight-color: transparent;
+    <!-- animation: flicker 2s ease-out infinite; -->
+}
+@keyframes flicker{
+  0% {
+    transform: scale(.1);
+  }
+  50% {
+    transform: scale(.8);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 @media (max-width: 1000px) {
     .KimmPhi{
         top: 48%;
-        left: 41%;
+        left: 43%;
     }
 }
 </style>
 </HEAD>
 <BODY>
     <canvas id="pinkboard"></canvas>
-    <span class="KimmPhi" data-text="KimmPhi">KimmPhi</span>
+    <span class="KimmPhi" data-text="KimPhi">KimPhi</span>
 <script>
 var settings = {
 particles: {

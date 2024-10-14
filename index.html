@@ -59,6 +59,14 @@ canvas {
     3px 0px 0px #962f06;
     -webkit-tap-highlight-color: transparent;
 }
+
+.KimmPhi.active::before {
+    width: 100%;
+    color: #b6400d;
+    filter: drop-shadow(0 0 30px #962f06);
+    text-shadow: 0 0 10px #962f06, 3px 0px 0px #962f06;
+}
+
 @keyframes flicker{
   0% {
     transform: scale(1);
@@ -355,6 +363,19 @@ canvas {
       render();
     }, 10);
   })(document.getElementById('pinkboard'));  
+
+  // bắt sự kiện chạm vào ở điện thoại
+  var textElement = document.querySelector('.KimmPhi');
+
+  // Bắt sự kiện chạm vào màn hình (touchstart)
+  textElement.addEventListener('touchstart', function() {
+    textElement.classList.add('active');
+  });
+
+  // Bắt sự kiện khi thả tay khỏi màn hình (touchend)
+  textElement.addEventListener('touchend', function() {
+    textElement.classList.remove('active');
+  });
 
   </script>
 

@@ -38,7 +38,7 @@ canvas {
     position: relative;
     -webkit-tap-highlight-color: transparent;
     cursor: pointer;
-    display: flex;
+    display: block;
     animation: flicker 1.3s linear infinite;
   }
   
@@ -48,7 +48,8 @@ canvas {
     color: #fff;
     width: 0%;
     overflow: hidden;
-    transition: 1.8s;
+    transition: width 0.5s; /* Giảm thời gian chuyển đổi */
+    white-space: nowrap; /* Giữ nguyên không gian cho chữ */
   }
   .KimmPhi:hover::before {
     width: 100%;
@@ -124,7 +125,7 @@ canvas {
   <div class="box">
     <canvas id="pinkboard"></canvas>
   </div>
-  <span class="KimmPhi" data-text="KimPhi:3" >KimPhi:3</span>
+  <span class="KimmPhi" data-text="Cẩm Nhung:3" >Cẩm Nhung:3</span>
  
 <script>
   var settings = {
